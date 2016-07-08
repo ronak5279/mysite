@@ -1,0 +1,12 @@
+li a {
+	color: white;
+	font-size: 25px
+}
+
+body {
+    background-image: url("images/1.jpg") ;
+	background-repeat: no-repeat;
+
+    background-size: cover;
+
+
