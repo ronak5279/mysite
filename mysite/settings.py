@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '$q8k-44s(z%n#&vgr#7m*6(x&509)ri+f8*km(m&kw-jde!xqe'
+SECRET_KEY = 'hoi83%9uhbz-(2(s+mca_4aj^gi=)n5ueub9y@jmx$k#ii+1f_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -48,9 +48,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
-
+LOGIN_URL = '../../../polls/login/'
 ROOT_URLCONF = 'mysite.urls'
-
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
 
@@ -72,6 +71,7 @@ LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
+TEMPLATE_DIRS=[os.path.join(BASE_DIR,'templates')]
 
 USE_L10N = True
 
@@ -82,15 +82,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
-TEMOLATE_DIRS=[os.path.join(BASE_DIR,'templates')]
-
-PASSWORD_HASHERS = (
-    'myproject.hashers.MyPBKDF2PasswordHasher',
-    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
-    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
-    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
-    'django.contrib.auth.hashers.BCryptPasswordHasher',
-    'django.contrib.auth.hashers.SHA1PasswordHasher',
-    'django.contrib.auth.hashers.MD5PasswordHasher',
-    'django.contrib.auth.hashers.CryptPasswordHasher',
-)
+login_url='/accounts/login/'
