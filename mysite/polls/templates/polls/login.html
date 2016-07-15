@@ -28,6 +28,8 @@
 
 </head>
 <body>
+{% if message %}<p>  {{message}}</p>
+{% endif %}
     <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
     <div class="container">
 	<img src="{{STATIC_URL}}polls/img/111.png" class="imgh pointer">
@@ -67,7 +69,7 @@
                         <label for="username" class="col-lg-2 control-label">
                             Username</label>
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" id="username" placeholder="Username">
+                            <input type="text" class="form-control" placeholder="Username" name="username" >
                         </div>
                     </div>
 					
@@ -75,10 +77,11 @@
                         <label for="password" class="col-lg-2 control-label">
                             Password</label>
                         <div class="col-lg-10">
-                            <input type="password" class="form-control" id="=password" placeholder="Password">
+                            <input type="password" class="form-control" name="password" placeholder="Password">
                           
                         </div>
                     </div>
+                    
                     
                      
                            

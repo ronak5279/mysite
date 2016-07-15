@@ -8,6 +8,8 @@ from django.contrib.auth import authenticate,login,logout
 from mysite import settings
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.core.context_processors import csrf
+
 
 
 class IndexView(generic.ListView):
@@ -53,7 +55,6 @@ def vote(request,question_id):
 	
 def call_signup(request):
 	return render(request,'polls/signup.html/')
-<<<<<<< HEAD
 	
 def create_user(request):
 	username=request.POST.get('username')
@@ -61,43 +62,23 @@ def create_user(request):
 	lastname=request.POST.get('lastname')
 	email=request.POST.get('email')
 	password=request.POST.get('password')
-=======
-def create_user(request):
-	
-	username=request.POST['username']
-	firstname=request.POST['firstname']
-	lastname=request.POST['lastname']
-	email=request.POST['email']
-	password=request.POST['password']
->>>>>>> 9933ac941a059177e66820fd76340af4d647f51d
 	user=User.objects.create_user(username, email, password)
 	user.first_name=firstname
 	user.last_name=lastname
 	user.save()
 	return HttpResponseRedirect(reverse('polls:index'))
-<<<<<<< HEAD
 	
 def call_login(request):
 	return render(request,'polls/login.html/')
 def verify_user(request):
-	username=request.POST.get('username')
+	username= request.POST.get('username')
 	password=request.POST.get('password')
-=======
-def call_login(request):
-	return render(request,'polls/login.html/')
-def verify_user(request):
-	username = request.POST['username']
-	password = request.POST['password']
->>>>>>> 9933ac941a059177e66820fd76340af4d647f51d
 	user = authenticate(username=username, password=password)
 	if user is not None:
 		if user.is_active:
 			login(request,user)
-<<<<<<< HEAD
-			return HttpResponseRedirect("success")
-=======
 			return HttpResponseRedirect(reverse('polls:index'))
->>>>>>> 9933ac941a059177e66820fd76340af4d647f51d
+
 		else:
 			return render(request,'polls/login.html/',{'message':'The account has been disabled.'})
 	else:
@@ -109,15 +90,9 @@ def call_changepassword(request):
 def save_password(request):
 	user=request.user
 	username=request.user.username
-<<<<<<< HEAD
 	oldpassword=request.POST.get('oldpassword')
 	password1=request.POST.get('password1')
 	password2=request.POST.get('password2')
-=======
-	oldpassword=request.POST['oldpassword']
-	password1=request.POST['password1']
-	password2=request.POST['password2']
->>>>>>> 9933ac941a059177e66820fd76340af4d647f51d
 	test_user= authenticate(username=username, password=oldpassword)
 	if test_user is None:
 		return render(request,'polls/changepassword.html/',{'message':'The existing password is incorrect.'})
