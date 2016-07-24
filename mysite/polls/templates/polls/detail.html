@@ -41,12 +41,12 @@
         <div class="collapse navbar-collapse navbar-menubuilder">
             <ul class="nav navbar-nav navbar-right">
                 
-            
+            <div class="logout">
                 <form class="form-horizontal" action="{%url 'polls:log_out'%}" method="post">
              {% csrf_token %}
                   <button type="submit" class="btn btn-primary">
                                 Logout</button>
-								</form>
+								</form></div>
             </ul>
         </div>
     </div>
