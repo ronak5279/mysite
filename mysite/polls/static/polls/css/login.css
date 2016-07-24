@@ -143,7 +143,9 @@ input, textarea{
    
     color: #F7F7F7;
 }
-
+.logout{
+	margin-top: 30px;
+}
 
 .radio
 {
