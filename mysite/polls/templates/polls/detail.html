@@ -47,6 +47,13 @@
                   <button type="submit" class="btn btn-primary">
                                 Logout</button>
 								</form></div>
+	             <div class="logout">
+
+                <form class="form-horizontal" action="{%url 'polls:call_changepassword'%}" method="post">
+             {% csrf_token %}
+                  <button type="submit" class="btn btn-primary">
+                                Change Password</button>
+								</form></div>
             </ul>
         </div>
     </div>
