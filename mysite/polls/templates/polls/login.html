@@ -28,8 +28,7 @@
 
 </head>
 <body>
-{% if message %}<p>  {{message}}</p>
-{% endif %}
+
     <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
     <div class="container">
 	<img src="{{STATIC_URL}}polls/img/111.png" class="imgh pointer">
@@ -102,6 +101,8 @@
 
          </div>
         </div>
+         {% if message %}<p><h3><font color="white">  {{message}}</font></h3></p>
+{% endif %}
         <script src="{% static 'polls/js/jquery.js' %}" type="text/javascript"></script>
         <script src="{% static 'polls/js/bootstrap.min.js' %}" type="text/javascript"></script>
         <script src="{% static 'polls/js/jquery.backstretch.js' %}" type="text/javascript"></script>
