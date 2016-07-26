@@ -95,17 +95,17 @@ def save_password(request):
 	password2=request.POST.get('password2')
 	test_user= authenticate(username=username, password=oldpassword)
 	if test_user is None:
-		return render(request,'polls/changepassword.html/',{'message':'The existing password is incorrect.'})
+		return render(request,'polls/changepwd.html/',{'message':'The existing password is incorrect.'})
 	else:
 		if password1!=password2:
-			return render(request,'polls/changepassword.html/',{'message':'The entered passwords did not match.'})
+			return render(request,'polls/changepwd.html/',{'message':'The entered passwords did not match.'})
 		else:
 			if password1:
 				user.set_password(password1)
 				user.save()
 				return render(request,'polls/login.html/',{'message':'The password has been successfully changed.'})
 			else:
-				return render(request,'polls/changepassword.html/',{'message':'Null passwords not accepted.'})
+				return render(request,'polls/changepwd.html/',{'message':'Null passwords not accepted.'})
 
 def log_out(request):
 	logout(request)
