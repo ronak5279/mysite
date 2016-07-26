@@ -103,7 +103,7 @@ def save_password(request):
 			if password1:
 				user.set_password(password1)
 				user.save()
-				return render(request,'polls/changepassword.html/',{'message':'The password has been successfully changed.'})
+				return render(request,'polls/login.html/',{'message':'The password has been successfully changed.'})
 			else:
 				return render(request,'polls/changepassword.html/',{'message':'Null passwords not accepted.'})
 
