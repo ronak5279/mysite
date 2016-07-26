@@ -107,6 +107,8 @@
 
          </div>
         </div>
+         {% if message %}<p><h3><font color="white">  {{message}}</font></h3></p>
+{% endif %}
         <script src="{% static 'polls/js/jquery.js' %}" type="text/javascript"></script>
         <script src="{% static 'polls/js/bootstrap.min.js' %}" type="text/javascript"></script>
         <script src="{% static 'polls/js/jquery.backstretch.js' %}" type="text/javascript"></script>
